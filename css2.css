@@ -1,0 +1,9 @@
+body {
+    background: #ccc;
+}
+
+input {
+    width: 100px;
+    height: 50px;
+    background: red;
+}

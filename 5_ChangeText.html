@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Change Text</title>
+    <script>
+        function setText() {
+            var oTxt = document.getElementById('txt1');
+
+            oTxt.title = "Testing";
+        }
+    </script>
+</head>
+<body>
+    <input id="txt1" type=text>
+    <input type="button" value="Change Text" onclick="setText()">
+</body>
+</html>

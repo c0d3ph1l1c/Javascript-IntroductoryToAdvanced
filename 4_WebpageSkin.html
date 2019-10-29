@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link id="l1" rel="stylesheet" type="text/css" href="css1.css">
+    <title>Webpage Skin</title>
+    <script>
+        function skin1() {
+            var oL = document.getElementById('l1');
+
+            oL.href = 'css1.css';
+        }
+
+        function skin2() {
+            var oL = document.getElementById('l1');
+
+            oL.href = 'css2.css';
+        }
+    </script>
+</head>
+<body>
+    <input type="button" value="Skin 1" onclick="skin1()">
+    <input type="button" value="Skin 2" onclick="skin2()">
+</body>
+</html>
