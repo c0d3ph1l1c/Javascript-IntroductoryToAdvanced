@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Changing Color Div</title>
+    <style>
+        #div1 {
+            width: 200px;
+            height: 200px;
+            background: red;
+        }
+    </style>
+    <script>
+        // function toGreen() {
+        //     var oDiv = document.getElementById('div1');
+        //     oDiv.style.background = 'green';
+        // }
+
+        // function toYellow() {
+        //     var oDiv = document.getElementById('div1');
+        //     oDiv.style.background = 'yellow';
+        // }
+
+        // function toBlack() {
+        //     var oDiv = document.getElementById('div1');
+        //     oDiv.style.background = 'black';
+        // }
+
+        function setColor(color) {
+            var oDiv = document.getElementById('div1');
+            oDiv.style.background = color;
+        }
+    </script>
+</head>
+<body>
+    <!-- <input type="button" value="Green" onclick="toGreen();">
+    <input type="button" value="Yellow" onclick="toYellow();">
+    <input type="button" value="Black" onclick="toBlack();"> -->
+    <input type="button" value="Green" onclick="setColor('green');">
+    <input type="button" value="Yellow" onclick="setColor('yellow');">
+    <input type="button" value="Black" onclick="setColor('black');">
+    <div id="div1"></div>
+</body>
+</html>

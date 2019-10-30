@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Change Style</title>
+    <style>
+        #div1 {
+            width: 200px;
+            height: 200px;
+            background: red;
+        }
+    </style>
+    <script>
+        // function toWidth() {
+        //     var oDiv = document.getElementById('div1');
+        //     oDiv.style.width = '400px';
+        // }
+
+        // function toHeight() {
+        //     var oDiv = document.getElementById('div1');
+        //     oDiv.style.height = '400px';
+        // }
+
+        // function toGreen() {
+        //     var oDiv = document.getElementById('div1');
+        //     oDiv.style.background = 'green';
+        // }
+
+        function setStyle(name, value) {
+            var oDiv = document.getElementById('div1');
+            oDiv['style'][name] = value;
+        }
+    </script>
+</head>
+<body>
+    <!-- <input type="button" value="Wider" onclick="toWidth();">
+    <input type="button" value="Taller" onclick="toHeight();">
+    <input type="button" value="Green" onclick="toGreen();"> -->
+    <input type="button" value="Wider" onclick="setStyle('width', '400px');">
+    <input type="button" value="Taller" onclick="setStyle('height', '400px');">
+    <input type="button" value="Green" onclick="setStyle('background', 'green');">
+    <div id="div1"></div>
+</body>
+</html>
