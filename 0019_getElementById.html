@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>getElementById</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            float: left;
+            border: 1px solid black;
+        }
+    </style>
+    <script>
+        window.onload=function() {
+            var aDiv = document.getElementsByTagName('div');
+
+            // alert(aDiv.length);
+            // aDiv.style.background = 'red';   // wrong
+
+            // aDiv[0].style.background = 'red';
+            // aDiv[1].style.background = 'red';
+            // aDiv[2].style.background = 'red';
+            // aDiv[3].style.background = 'red';
+
+            for(var i = 0; i < aDiv.length; i++) {
+                // i -> 0,1,2,3
+                aDiv[i].style.background = 'red';
+            }
+        }
+    </script>
+</head>
+<body>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+</body>
+</html>

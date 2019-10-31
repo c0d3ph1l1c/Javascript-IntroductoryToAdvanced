@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Style & Class</title>
+    <style>
+        #div1 {
+            width: 200px;
+            height: 200px;
+            border: 1px solid black;
+            /* background: red; */
+        }
+        .box {
+            background: red;
+        }
+    </style>
+    <!-- 1. Style added in DOM is added to the element inline style -->
+    <!-- 2. Style retrieved from DOM is taken from the element inline style -->
+    <script>
+        function toRed() {
+            var oDiv = document.getElementById('div1');
+
+            // oDiv.style.background = 'red';
+            // alert(oDiv.style.background);
+
+            oDiv.className = 'box';
+        }
+        function toGreen() {
+            var oDiv = document.getElementById('div1');
+
+            oDiv.style.background = 'green';
+        }
+    </script>
+</head>
+<body>
+    <input type="button" value="To Red" onclick="toRed();">
+    <input type="button" value="To Green" onclick="toGreen();">
+    <div id="div1"></div>
+</body>
+</html>
