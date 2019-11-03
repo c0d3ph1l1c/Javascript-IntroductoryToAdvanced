@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Inner HTML</title>
+  <style>
+    #div1 {
+      width: 200px;
+      height: 150px;
+      border: 1px solid black; 
+    }
+  </style>
+  <script>
+    window.onload = function() {
+      var oTxt = document.getElementById('txt1');
+      var oBtn = document.getElementById('btn1');
+      var oDiv = document.getElementById('div1');
+
+      oBtn.onclick = function() {
+        oDiv.innerHTML = oTxt.value;
+        // alert(oDiv.innerHTML);
+      }
+    }
+  </script>
+</head>
+<body>
+  <input type="text" id="txt1">
+  <input type="button" id="btn1" value="Set Text">
+  <div id="div1"></div>
+</body>
+</html>
