@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Type Conversion</title>
+  <script>
+    window.onload = function() {
+      var oTxt1 = document.getElementById('txt1');
+      var oTxt2 = document.getElementById('txt2');
+      var oBtn = document.getElementById('btn1');
+
+      oBtn.onclick = function() {
+        // alert(typeof oTxt1.value);
+        // alert(parseInt(oTxt1.value) + parseInt(oTxt2.value));
+
+         var n1 = parseInt(oTxt1.value);
+         var n2 = parseInt(oTxt2.value);
+         if(isNaN(n1)) {
+           alert('Wrong input for first number!');
+         } else if(isNaN(n2)) {
+            alert('Wrong input for second number!');
+         } else {
+            alert(n1 + n2);
+         }
+      }
+    }
+  </script>
+</head>
+<body>
+  <input type="text" id="txt1">
+  <input type="text" id="txt2">
+  <input type="button" id="btn1" value="Sum">
+</body>
+</html>

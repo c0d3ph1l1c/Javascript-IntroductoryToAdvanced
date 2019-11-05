@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Scope & Closure</title>
+  <script>
+    // 1. 
+    // var a;                    // Global scope
+    // function aaa() {
+    //   // var a = 12;         // Local scope
+    //   a = 12;
+    // }
+
+    // function bbb() {
+    //   alert(a);
+    // }
+
+    // aaa();
+    // bbb();          // Check console
+
+    // 2. Closure - Inner function can use Outer function's local variables
+    function aaa() {        // Outer function 
+      var a = 12;
+
+      function bbb() {      // Inner function
+        alert(a);
+      }
+
+      bbb();
+    }
+
+    aaa();
+  </script>
+</head>
+<body>
+  
+</body>
+</html>
