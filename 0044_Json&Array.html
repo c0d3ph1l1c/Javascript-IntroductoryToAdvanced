@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Json & Array</title>
+  <script>
+    var json = {a: 12, b: 5, c: 7};
+    var arr = [12, 5, 7];
+
+    // alert(json.a);
+    // alert(json['a']);
+    // alert(arr[0]);
+
+    // alert(json.length);     // undefined
+    // alert(arr.length);
+
+    // Loop
+    // for(var i = 0; i < arr.length; i++) {
+    //   alert('Item ' + i + ': ' + arr[i]);
+    // }
+
+    // for(var i in arr) {
+    //   alert('Item ' + i + ': ' + arr[i]);
+    // }
+
+    for(var i in json) {
+      alert(json[i]);
+    }
+  </script>
+</head>
+<body>
+  
+</body>
+</html>
