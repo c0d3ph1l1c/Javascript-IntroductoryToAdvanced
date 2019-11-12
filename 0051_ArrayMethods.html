@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Array Methods</title>
+  <script>
+    // 1. 
+    // var arr = [1, 2, 3];
+
+    // arr.push(4);
+    // arr.pop();
+    // arr.shift();
+    // arr.unshift(5);
+    // alert(arr);
+
+    // 2.
+    // var arr = [1, 2, 3, 4, 5, 6];
+    // delete: splice(start, length)
+    // arr.splice(2, 3);
+
+    // insert: splice(start, length, elements)
+    // arr.splice(2, 0, 'a', 'b', 'c');
+
+    // replace: splice(start, length, elements)
+    // arr.splice(2, 2, 'a', 'b');
+
+    // alert(arr);
+
+    // 3.
+    // var a = [1,2,3];
+    // var b = [4,5,6];
+    // alert(b.concat(a));
+
+    // 4. 
+    // var arr = [1,2,3,4];
+    // alert(arr.join('- -p'));
+
+    // 5.
+    // var arr = ['float', 'width', 'alpha', 'zoom', 'left'];
+    var arr = [12, 8, 99, 19, 112];
+
+    // arr.sort();
+    arr.sort(function(n1, n2){
+      // if(n1 < n2) {
+      //   return -1;
+      // } else if(n1 > n2) {
+      //   return 1;
+      // } else {
+      //   return 0;
+      // }
+      return n1 - n2;
+    });
+
+    alert(arr); 
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

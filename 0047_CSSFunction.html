@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>CSS Function</title>
+  <script>
+    function css(obj, name, value) {
+      // alert(obj == arguments[0]);
+      if(arguments.length == 2) {
+        return obj.style[name];
+      } else {
+        obj.style[name] = value;
+      }
+    }
+
+    window.onload = function() {
+      var oDiv = document.getElementById('div1');
+
+      alert(css(oDiv, 'width'));
+
+      // css(oDiv, 'background', 'green');
+    }
+  </script>
+</head>
+<body>
+  <div id="div1" style="width: 200px; height: 200px; background: red;"></div>
+</body>
+</html>
