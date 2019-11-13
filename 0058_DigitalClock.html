@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Digital Clock</title>
+  <script>
+    function toDou(n) {
+      if(n < 10) {
+        return '0' + n;
+      } else {
+        return '' + n;
+      }
+    }
+    
+    window.onload = function() {
+      var aImg = document.getElementsByTagName('img');
+
+      function tick() {
+        // var str = '012321';
+        var oDate = new Date();
+
+        var str = toDou(oDate.getHours()) + toDou(oDate.getMinutes()) + toDou(oDate.getSeconds());
+
+        for(var i = 0; i < aImg.length; i++) {
+          // aImg[i].src = '0058_images/' + str[i] + '.png';
+          aImg[i].src = '0058_images/' + str.charAt(i) + '.png';
+        }
+      }
+
+      setInterval(tick, 1000);
+      tick();
+    }
+  </script>
+</head>
+<body style="background: black; color: white; font-size: 50px;">
+  <img src="0058_images/0.png" />
+  <img src="0058_images/0.png" />
+  :
+  <img src="0058_images/0.png" />
+  <img src="0058_images/0.png" />
+  :
+  <img src="0058_images/0.png" />
+  <img src="0058_images/0.png" />
+</body>
+</html>
