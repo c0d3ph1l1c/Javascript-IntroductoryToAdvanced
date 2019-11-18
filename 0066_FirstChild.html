@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>First Child</title>
+  <script>
+    window.onload = function() {
+      var oUl = document.getElementById('ul1');
+
+      // IE6-8
+      // oUl.firstChild.style.background = 'red';
+
+      // Later browsers
+      // oUl.firstElementChild.style.background = 'red';
+
+      // For compatibility
+      if(oUl.firstElementChild) {
+        oUl.firstElementChild.style.background = 'red';
+      } else {
+        oUl.firstChild.style.background = 'red';
+      }
+    }
+  </script>
+</head>
+<body>
+  <ul id="ul1">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+  </ul>
+</body>
+</html>
