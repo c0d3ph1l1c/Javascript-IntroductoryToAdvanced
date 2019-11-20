@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Delete Elements</title>
+  <script>
+    window.onload = function() {
+      var aA = document.getElementsByTagName('a');
+      var oUl = document.getElementById('ul1');
+
+      for(var i = 0; i < aA.length; i++) {
+        aA[i].onclick = function() {
+          oUl.removeChild(this.parentElement);
+        }
+      }
+    }
+  </script>
+</head>
+<body>
+  <ul id="ul1">
+    <li>abc <a href="javascript:;">Delete</a></li>
+    <li>def <a href="javascript:;">Delete</a></li>
+    <li>ghi <a href="javascript:;">Delete</a></li>
+    <li>lmn <a href="javascript:;">Delete</a></li>
+  </ul>
+</body>
+</html>
