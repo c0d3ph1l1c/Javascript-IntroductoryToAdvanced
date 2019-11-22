@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Animation Basics</title>
+  <style>
+    #div1 {
+      width: 200px;
+      height: 200px;
+      background: red;
+      position: absolute;
+      top: 50px;
+      left: 0px;
+    }
+  </style>
+  <script>
+    var timer = null;
+    function startMove() {
+      var oDiv = document.getElementById('div1');
+
+      // To avoid div getting faster and faster when button is clicked multiple times
+      clearInterval(timer);     
+
+      timer = setInterval(function() {
+        var speed = 10;
+
+        // if(oDiv.offsetLeft >= 300) {
+        //   clearInterval(timer);
+        // } 
+        // // oDiv.style.left = oDiv.offsetLeft + 10 + 'px';
+        // oDiv.style.left = oDiv.offsetLeft + speed + 'px';
+
+        if(oDiv.offsetLeft >= 300) {
+          clearInterval(timer);
+        } else {
+          // Without Else, the div will still inch forward when button is clicked
+          oDiv.style.left = oDiv.offsetLeft + speed + 'px';
+        }
+      }, 30);
+    }
+  </script>
+</head>
+<body>
+  <input id="btn1" type="button" value="Start Movement" onclick="startMove()">
+  <div id="div1"></div>
+</body>
+</html>
