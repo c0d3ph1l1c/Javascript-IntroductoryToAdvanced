@@ -11,6 +11,7 @@
       height: 50px;
       background: red;
       margin: 10px;
+      border: 10px solid black;
     }
   </style>
   <script>
@@ -35,14 +36,19 @@
       clearInterval(obj.timer);
 
       obj.timer = setInterval(function() {
+        console.log(obj.style.width, obj.offsetWidth);
+
         var speed = (iTarget - obj.offsetWidth)/6;
         speed = speed > 0? Math.ceil(speed) : Math.floor(speed);
 
         if(obj.offsetWidth == iTarget) {
+          console.log('clear');
           clearInterval(obj.timer);
         } else {
           obj.style.width = obj.offsetWidth + speed + 'px';
         }
+
+        console.log(obj.style.width, obj.offsetWidth);
       }, 30);
     }
   </script>
