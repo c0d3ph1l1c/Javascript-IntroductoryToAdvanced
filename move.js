@@ -6,7 +6,7 @@ function getStyle(obj, name) {
   }
 }
 
-function startMove(obj, attr, iTarget) {
+function startMove(obj, attr, iTarget, fnEnd) {
   clearInterval(obj.timer);
 
   obj.timer = setInterval(function() {
@@ -24,6 +24,8 @@ function startMove(obj, attr, iTarget) {
 
     if(cur == iTarget) {
       clearInterval(obj.timer);
+
+      if(fnEnd) fnEnd();
     }  else {
       if(attr == 'opacity') {
         obj.style.filter = 'alpha(opacity:' + (cur + speed) + ')';

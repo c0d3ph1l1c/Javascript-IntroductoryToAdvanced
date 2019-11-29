@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Complete Animation Framework</title>
+  <style>
+    #div1 {
+      width: 100px;
+      height: 100px;
+      background: red;
+      filter: alpha(opacity=30);
+      opacity: 0.3;
+    }
+  </style>
+  <script src="move3.js"></script>
+  <script>
+    window.onload = function() {
+      var oBtn = document.getElementById('btn1');
+      var oDiv = document.getElementById('div1');
+
+      oBtn.onclick = function() {
+        startMove(oDiv, {width: 101, height: 300, opacity: 100}, function() {
+          alert('a');
+        });
+      };
+    }
+  </script>
+</head>
+<body>
+  <input id="btn1" type="button" value="Animate">
+  <div id="div1"></div>
+</body>
+</html>
