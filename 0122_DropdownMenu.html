@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Dropdown Menu</title>
+  <style>
+    #div1 {
+      width: 400px;
+      height: 300px;
+      background: #ccc;
+      display: none;
+    }
+  </style>
+  <script>
+    window.onload = function() {
+      var oBtn = document.getElementById('btn1');
+      var oDiv = document.getElementById('div1');
+
+      oBtn.onclick = function(ev) {
+        var oEvent = ev || event;
+
+        oDiv.style.display = 'block';
+        // alert('Button clicked');
+
+        oEvent.cancelBubble = true;
+      }
+
+      document.onclick = function(ev) {
+        oDiv.style.display = 'none';
+        // alert('Document clicked');
+      }
+    }
+  </script>
+</head>
+<body>
+  <input id="btn1" type="button" value="Show">
+  <div id="div1"></div>
+</body>
+</html>
