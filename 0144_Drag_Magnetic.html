@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Drag - Magnetic</title>
+  <style>
+    #div1 {
+      width: 100px;
+      height: 100px;
+      background: red;
+      position: absolute;
+    }
+
+    #div2 {
+      width: 700px;
+      height: 500px;
+      background: #ccc;
+      position: relative;
+    }
+  </style>
+  <script>
+    window.onload = function () {
+      var oDiv = document.getElementById('div1');
+      var oDiv2 = document.getElementById('div2');
+
+      var distX = 0;
+      var distY = 0;
+
+      oDiv.onmousedown = function (ev) {
+        var oEvent = ev || event;
+
+        distX = oEvent.clientX - oDiv.offsetLeft;
+        distY = oEvent.clientY - oDiv.offsetTop;
+
+        document.onmousemove = function (ev) {
+          var oEvent = ev || event;
+
+          var l = oEvent.clientX - distX;
+          var t = oEvent.clientY - distY;
+
+          if(l < 50) {
+            l = 0;
+          } else if(l  > oDiv2.offsetWidth - oDiv.offsetWidth) {
+            l = oDiv2.offsetWidth - oDiv.offsetWidth;
+          }
+
+          // To avoid div from being dragged outside of visible area.
+          if(t < 50) {
+            t = 0;
+          } else if(t  > oDiv2.offsetHeight - oDiv.offsetHeight) {
+            t = oDiv2.offsetHeight - oDiv.offsetHeight;
+          }
+
+          oDiv.style.left = l + 'px';
+          oDiv.style.top = t + 'px';          
+        };
+
+        document.onmouseup = function () {
+          document.onmousemove = null;
+          document.onmouseup = null;
+          attract(oDiv);
+        };
+
+        // to solve old buggy Firefox - div's ghost issue when dragged
+        return false;
+      }
+    }
+  </script>
+</head>
+
+<body>
+  <div id="div2">
+    <div id="div1"></div>
+  </div>
+</body>
+
+</html>

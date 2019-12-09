@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Attach Event 3</title>
+  <script>
+    function myAddEvent(obj, ev, fn) {
+      if(obj.attachEvent) {
+        obj.attachEvent('on' + ev, fn);
+      } else {
+        obj.addEventListener(ev, fn, false);
+      }
+    }
+
+    window.onload = function() {
+      var oBtn = document.getElementById('btn1');
+
+      myAddEvent(oBtn, 'click', function() {
+        alert('a');
+      });
+      myAddEvent(oBtn, 'click', function() {
+        alert('b');
+      });
+    }
+  </script>
+</head>
+<body>
+  <input type="button" id="btn1" value="button">
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Attach Event</title>
+  <script>
+    window.onload = function() {
+      var oBtn = document.getElementById('btn1');
+
+      // IE
+      // attachEvent(event, handler)
+      // oBtn.attachEvent('onclick', function() {
+      //   alert('a');
+      // });
+      // oBtn.attachEvent('onclick', function() {
+      //   alert('b');
+      // });
+
+      // FF, Chrome
+      // addEventListener(event, handler, false)
+      oBtn.addEventListener('click', function() {
+        alert('a');
+      }, false);
+      oBtn.addEventListener('click', function() {
+        alert('b');
+      }, false);
+
+      // only 1 handler allowed for onclick
+      // oBtn.onclick = function() {
+      //   alert('a');
+      // };
+      // oBtn.onclick = function() {
+      //   alert('b');
+      // };
+    }
+  </script>
+</head>
+<body>
+  <input type="button" id="btn1" value="button">
+</body>
+</html>
