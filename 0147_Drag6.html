@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Drag 6</title>
+  <style>
+    #div1 {
+      width: 100px;
+      height: 100px;
+      background: red;
+      position: absolute;
+    }
+  </style>
+  <script>
+    window.onload = function () {
+      var oDiv = document.getElementById('div1');
+
+      var distX = 0;
+      var distY = 0;
+
+      oDiv.onmousedown = function (ev) {
+        var oEvent = ev || event;
+
+        distX = oEvent.clientX - oDiv.offsetLeft;
+        distY = oEvent.clientY - oDiv.offsetTop;
+
+        if(oDiv.setCapture) {
+          oDiv.onmousemove = function (ev) {
+            var oEvent = ev || event;
+            var l = oEvent.clientX - distX;
+            var t = oEvent.clientY - distY;
+
+            oDiv.style.left = l + 'px';
+            oDiv.style.top = t + 'px';
+          };
+
+          oDiv.onmouseup = function () {
+            oDiv.onmousemove = null;
+            oDiv.onmouseup = null;
+
+            // Release capture upon mouse up to allow mouse event on other element
+            oDiv.releaseCapture();
+          };
+
+          // oDiv still follows cursor despite cursor drag beyond oDiv (oDiv capture all mouse event)
+          // Text selection issue during drag solved as well for IE7 or below 
+          oDiv.setCapture();
+        } else {
+          // Chrome, FF
+          document.onmousemove = function (ev) {
+            var oEvent = ev || event;
+            var l = oEvent.clientX - distX;
+            var t = oEvent.clientY - distY;
+
+            oDiv.style.left = l + 'px';
+            oDiv.style.top = t + 'px';
+          };
+
+          document.onmouseup = function () {
+            document.onmousemove = null;
+            document.onmouseup = null;
+          };
+        }
+
+        return false;
+      }
+    }
+  </script>
+</head>
+
+<body>
+  asdasdfdg<br>
+  gfdfsdfdfg
+  <div id="div1">
+    asdasdfdg<br>
+    gfdfsdfdfg
+  </div>
+  asdasdfdg<br>
+  gfdfsdfdfg
+</body>
+
+</html>

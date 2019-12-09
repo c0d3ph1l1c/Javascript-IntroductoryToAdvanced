@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Event Capture</title>
+  <script>
+    window.onload = function() {
+      var oBtn = document.getElementById('btn1');
+
+      oBtn.onclick = function() {
+        alert('a');
+      };
+
+      // IE5 or below
+      // Retarget all mouse event to this element
+      oBtn.setCapture();
+    }
+  </script>
+</head>
+<body>
+  <input id="btn1" type="button" value="button">
+</body>
+</html>
