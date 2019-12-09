@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Drag 3</title>
+  <style>
+    #div1 {
+      width: 200px;
+      height: 200px;
+      background: red;
+      position: absolute;
+    }
+  </style>
+  <script>
+    window.onload = function () {
+      var oDiv = document.getElementById('div1');
+
+      var distX = 0;
+      var distY = 0;
+
+      oDiv.onmousedown = function (ev) {
+        var oEvent = ev || event;
+
+        distX = oEvent.clientX - oDiv.offsetLeft;
+        distY = oEvent.clientY - oDiv.offsetTop;
+
+        document.onmousemove = function (ev) {
+          var oEvent = ev || event;
+
+          var l = oEvent.clientX - distX;
+          var t = oEvent.clientY - distY;
+
+          if(l < 0) {
+            l = 0;
+          } else if(l  > document.documentElement.clientWidth - oDiv.offsetWidth) {
+            l = document.documentElement.clientWidth - oDiv.offsetWidth;
+          }
+
+          // To avoid div from being dragged outside of visible area.
+          if(t < 0) {
+            t = 0;
+          } else if(t  > document.documentElement.clientHeight - oDiv.offsetHeight) {
+            t = document.documentElement.clientHeight - oDiv.offsetHeight;
+          }
+
+          oDiv.style.left = l + 'px';
+          oDiv.style.top = t + 'px';          
+        };
+
+        document.onmouseup = function () {
+          document.onmousemove = null;
+          document.onmouseup = null;
+        };
+
+        // to solve old buggy Firefox - div's ghost issue when dragged
+        return false;
+      }
+    }
+  </script>
+</head>
+
+<body>
+  <div id="div1"></div>
+</body>
+
+</html>
