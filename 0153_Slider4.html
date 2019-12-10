@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Slider 4</title>
+  <style>
+    #parent {
+      width: 600px;
+      height: 20px;
+      background: #ccc;
+      position: relative;
+      margin: 10px auto;
+    }
+
+    #div1 {
+      width: 20px;
+      height: 20px;
+      background: red;
+      position: absolute;
+    }
+
+    #div2 {
+      width: 400px;
+      height: 300px;
+      border: 1px solid black;
+      overflow: hidden;
+      position: relative;
+    }
+
+    #div3 {
+      position: absolute;
+      left: 0;
+      top: 0;
+      padding: 4px;
+    }
+  </style>
+  <script>
+    window.onload = function () {
+      var oDiv = document.getElementById('div1');
+      var oDiv2 = document.getElementById('div2');
+      var oDiv3 = document.getElementById('div3');
+      var oParent = document.getElementById('parent');
+
+      var distX = 0;
+      var distY = 0;
+
+      oDiv.onmousedown = function (ev) {
+        var oEvent = ev || event;
+
+        distX = oEvent.clientX - oDiv.offsetLeft;
+
+        document.onmousemove = function (ev) {
+          var oEvent = ev || event;
+          var l = oEvent.clientX - distX;
+
+          if(l < 0) {
+            l = 0;
+          } else if(l > oParent.offsetWidth - oDiv.offsetWidth) {
+            l = oParent.offsetWidth - oDiv.offsetWidth;
+          }
+
+          oDiv.style.left = l + 'px';
+
+          var scale = l/(oParent.offsetWidth - oDiv.offsetWidth);
+          document.title = scale;
+
+          oDiv3.style.top = - scale * (oDiv3.offsetHeight - oDiv2.offsetHeight) + 'px';
+        };
+
+        document.onmouseup = function () {
+          document.onmousemove = null;
+          document.onmouseup = null;
+        };
+
+        // Solve chrome, ff, IE9 (but not IE7) selection issue when drag over text
+        return false;       
+      }
+    }
+  </script>
+</head>
+<body>
+  <div id="parent">
+    <div id="div1"></div>
+  </div>
+  <div id="div2">
+    <div id="div3">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Convallis a cras semper auctor neque vitae tempus quam pellentesque. Volutpat ac tincidunt vitae semper quis lectus. Blandit turpis cursus in hac. Vulputate dignissim suspendisse in est ante in nibh mauris. In nibh mauris cursus mattis molestie a iaculis. Sit amet massa vitae tortor condimentum lacinia. Consequat semper viverra nam libero justo laoreet sit. Risus at ultrices mi tempus imperdiet nulla malesuada pellentesque elit. Mi proin sed libero enim sed faucibus. Arcu odio ut sem nulla pharetra diam sit amet nisl. Magna fringilla urna porttitor rhoncus. Sem integer vitae justo eget magna fermentum iaculis eu. Eget est lorem ipsum dolor sit amet consectetur adipiscing elit. Gravida arcu ac tortor dignissim convallis. Urna condimentum mattis pellentesque id nibh. Sed libero enim sed faucibus turpis. Purus faucibus ornare suspendisse sed nisi lacus. Tellus cras adipiscing enim eu turpis egestas pretium aenean.
+
+      Rhoncus dolor purus non enim praesent elementum facilisis leo. Lorem sed risus ultricies tristique nulla aliquet. Vulputate ut pharetra sit amet aliquam id diam maecenas ultricies. Amet consectetur adipiscing elit pellentesque habitant morbi tristique senectus et. Nulla aliquet porttitor lacus luctus accumsan tortor posuere ac ut. Etiam tempor orci eu lobortis elementum. Faucibus scelerisque eleifend donec pretium vulputate sapien nec sagittis. Elementum pulvinar etiam non quam lacus suspendisse. Sapien faucibus et molestie ac feugiat. Sit amet luctus venenatis lectus magna fringilla urna porttitor rhoncus. Rutrum tellus pellentesque eu tincidunt tortor. Vitae elementum curabitur vitae nunc sed velit dignissim sodales. Erat nam at lectus urna duis. Blandit libero volutpat sed cras ornare arcu dui. Gravida rutrum quisque non tellus. Faucibus in ornare quam viverra orci sagittis eu. Risus sed vulputate odio ut enim. Ac placerat vestibulum lectus mauris ultrices eros in. Tortor at auctor urna nunc id.
+
+      Vestibulum rhoncus est pellentesque elit ullamcorper. Vulputate odio ut enim blandit volutpat. Commodo odio aenean sed adipiscing diam. Convallis convallis tellus id interdum velit laoreet id. Molestie a iaculis at erat. Adipiscing bibendum est ultricies integer quis auctor elit. Mi proin sed libero enim sed. Posuere sollicitudin aliquam ultrices sagittis orci. Vel pretium lectus quam id leo in vitae turpis. Ornare massa eget egestas purus viverra accumsan in nisl. Suspendisse interdum consectetur libero id. In hendrerit gravida rutrum quisque non tellus orci ac auctor. Consectetur adipiscing elit duis tristique sollicitudin nibh sit. Id diam vel quam elementum pulvinar etiam non. Facilisis gravida neque convallis a. Adipiscing elit duis tristique sollicitudin nibh sit. Viverra aliquet eget sit amet tellus cras adipiscing.
+
+      Semper risus in hendrerit gravida rutrum quisque. Est velit egestas dui id ornare arcu odio. Arcu non sodales neque sodales ut etiam sit amet. Vitae et leo duis ut diam quam nulla porttitor massa. Viverra vitae congue eu consequat ac felis. Id cursus metus aliquam eleifend mi in. Blandit cursus risus at ultrices. Elit eget gravida cum sociis natoque penatibus et magnis dis. Arcu cursus euismod quis viverra nibh cras pulvinar mattis nunc. At in tellus integer feugiat scelerisque varius. Placerat orci nulla pellentesque dignissim enim sit. Enim nunc faucibus a pellentesque sit. Etiam non quam lacus suspendisse faucibus interdum posuere. Vitae suscipit tellus mauris a diam maecenas sed enim ut. Magna ac placerat vestibulum lectus mauris ultrices eros in. Gravida rutrum quisque non tellus orci.
+
+      In massa tempor nec feugiat nisl. Arcu risus quis varius quam quisque id. Ut pharetra sit amet aliquam id diam maecenas ultricies mi. Id interdum velit laoreet id donec. Quis ipsum suspendisse ultrices gravida dictum fusce. Mauris cursus mattis molestie a iaculis at. In cursus turpis massa tincidunt dui ut ornare lectus. Luctus venenatis lectus magna fringilla urna porttitor rhoncus. Feugiat sed lectus vestibulum mattis. Congue quisque egestas diam in arcu cursus euismod quis viverra. Arcu vitae elementum curabitur vitae nunc sed. Tortor pretium viverra suspendisse potenti nullam. Quam lacus suspendisse faucibus interdum. Malesuada proin libero nunc consequat interdum varius sit. Vestibulum mattis ullamcorper velit sed ullamcorper morbi tincidunt. Tristique senectus et netus et malesuada fames. Iaculis nunc sed augue lacus. Amet venenatis urna cursus eget nunc scelerisque viverra. Consequat mauris nunc congue nisi vitae suscipit tellus.
+    </div>
+  </div>
+</body>
+</html>

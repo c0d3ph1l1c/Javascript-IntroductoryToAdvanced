@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Slider</title>
+  <style>
+    #parent {
+      width: 600px;
+      height: 20px;
+      background: #ccc;
+      position: relative;
+      margin: 10px auto;
+    }
+
+    #div1 {
+      width: 20px;
+      height: 20px;
+      background: red;
+      position: absolute;
+    }
+
+    #div2 {
+      width: 0px;
+      height: 0px;
+      background: green;
+    }
+  </style>
+  <script>
+    window.onload = function () {
+      var oDiv = document.getElementById('div1');
+      var oDiv2 = document.getElementById('div2');
+      var oParent = document.getElementById('parent');
+
+      var distX = 0;
+      var distY = 0;
+
+      oDiv.onmousedown = function (ev) {
+        var oEvent = ev || event;
+
+        distX = oEvent.clientX - oDiv.offsetLeft;
+
+        document.onmousemove = function (ev) {
+          var oEvent = ev || event;
+          var l = oEvent.clientX - distX;
+
+          if(l < 0) {
+            l = 0;
+          } else if(l > oParent.offsetWidth - oDiv.offsetWidth) {
+            l = oParent.offsetWidth - oDiv.offsetWidth;
+          }
+
+          oDiv.style.left = l + 'px';
+        };
+
+        document.onmouseup = function () {
+          document.onmousemove = null;
+          document.onmouseup = null;
+        };
+
+        // Solve chrome, ff, IE9 (but not IE7) selection issue when drag over text
+        return false;       
+      }
+    }
+  </script>
+</head>
+<body>
+  <div id="parent">
+    <div id="div1"></div>
+  </div>
+  <div id="div2"></div>
+</body>
+</html>

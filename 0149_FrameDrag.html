@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Frame Drag</title>
+  <style>
+    #div1 {
+      width: 100px;
+      height: 100px;
+      background: yellow;
+      position: absolute;
+    }
+    .box {
+      border: 1px dashed black;
+      position: absolute;
+    }
+  </style>
+  <script>
+    window.onload = function () {
+      var oDiv = document.getElementById('div1');
+
+      var distX = 0;
+      var distY = 0;
+
+      oDiv.onmousedown = function (ev) {
+        var oEvent = ev || event;
+
+        distX = oEvent.clientX - oDiv.offsetLeft;
+        distY = oEvent.clientY - oDiv.offsetTop;
+
+        var oBox = document.createElement('div');
+
+        oBox.className = 'box';
+
+        oBox.style.width = oDiv.offsetWidth -2 + 'px';
+        oBox.style.height = oDiv.offsetHeight - 2 + 'px';
+
+        oBox.style.left = oDiv.offsetLeft + 'px';
+        oBox.style.top = oDiv.offsetTop + 'px';
+
+        document.body.appendChild(oBox);
+
+        document.onmousemove = function (ev) {
+          var oEvent = ev || event;
+          var l = oEvent.clientX - distX;
+          var t = oEvent.clientY - distY;
+
+          oBox.style.left = l + 'px';
+          oBox.style.top = t + 'px';
+        };
+
+        document.onmouseup = function () {
+          document.onmousemove = null;
+          document.onmouseup = null;
+
+          oDiv.style.left = oBox.offsetLeft + 'px';
+          oDiv.style.top = oBox.offsetTop + 'px';
+
+          document.body.removeChild(oBox);
+        };
+
+        // Solve chrome, ff, IE9 (but not IE7) selection issue when drag over text
+        return false;       
+      }
+    }
+  </script>
+</head>
+
+<body>
+  <div id="div1"></div>
+</body>
+</html>
