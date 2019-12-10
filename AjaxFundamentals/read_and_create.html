@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Read and Create</title>
+  <script src="ajax.js"></script>
+  <script>
+    window.onload = function() {
+      var oBtn = document.getElementById('btn1');
+      var oUl = document.getElementById('ul1');
+
+      oBtn.onclick = function() {
+        ajax('data.txt?t=' + new Date().getTime(), function(str) {
+          var arr = eval(str);
+
+          for(var i = 0; i < arr.length; i++) {
+            var oLi = document.createElement('li');
+
+            oLi.innerHTML = '用户名：<strong>' + arr[i].user + '</strong>密码：<span>' + arr[i].pass + '</span>';
+            
+            oUl.appendChild(oLi);
+          }
+        }, function() {
+          alert('Failed');
+        })
+      };
+    };
+  </script>
+</head>
+<body>
+  <input id="btn1" type="button" value="button">
+  <ul id="ul1">
+    
+  </ul>
+</body>
+</html>
