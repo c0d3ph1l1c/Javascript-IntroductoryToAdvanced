@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>First Object Oriented Program 3</title>
+  <script>
+    function createPerson(name, qq) {     // Constructor
+      var obj = new Object();
+      
+      obj.name = name;
+      obj.qq = qq;
+      
+      obj.showName = function() {
+        alert('My name: ' + this.name);
+      };
+      
+      obj.showQQ = function() {
+        alert('My qq: ' + this.qq);
+      };
+
+      return obj;
+    }
+
+    var obj = createPerson('blue', '258248832');
+
+    obj.showName();
+    obj.showQQ();
+
+    
+    var obj2 = createPerson('张三', '5468978546');
+
+    obj2.showName();
+    obj2.showQQ();
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Window</title>
+  <script>
+    // Function 'show' belongs to window by default
+    // function show() {      
+    //   alert(this);
+    // }
+
+    window.show = function show() {
+      alert(this);
+    };
+
+    show();
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

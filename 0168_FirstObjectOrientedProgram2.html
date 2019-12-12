@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>First Object Oriented Program</title>
+  <script>
+    var obj = new Object();
+
+    obj.name = 'blue';
+    obj.qq = '258248832';
+
+    obj.showName = function() {
+      alert('My name: ' + this.name);
+    };
+
+    obj.showQQ = function() {
+      alert('My qq: ' + this.qq);
+    };
+
+    obj.showName();
+    obj.showQQ();
+  </script>
+</head>
+<body>
+  
+</body>
+</html>
