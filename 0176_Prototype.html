@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Prototype</title>
+  <script>
+    var arr1 = new Array(12,55,34,78,676);
+    var arr2 = new Array(12,33,1);
+
+    Array.prototype.sum = function() {    // Similar to css class
+    // arr1.sum = function() {    // Similar to inline style 
+             
+      var result = 0;
+
+      for(var i = 0 ; i < this.length; i++) {
+        result += this[i];
+      }
+
+      return result;
+    };
+
+    alert(arr1.sum());    
+    alert(arr2.sum());    
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

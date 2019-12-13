@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>New</title>
+  <script>
+    function createPerson(name, qq) {     // Constructor
+      // Material
+      var obj = new Object();
+
+      // Processing      
+      obj.name = name;
+      obj.qq = qq;
+      
+      obj.showName = function() {
+        alert('My name: ' + this.name);
+      };
+      
+      obj.showQQ = function() {
+        alert('My qq: ' + this.qq);
+      };
+
+      // Outputs
+      return obj;
+    }
+
+    var obj = createPerson('blue', '258248832');
+    var obj2 = createPerson('张三', '5468978546');
+
+    // Two sets of identical function, occupying unnecessary space 
+    alert(obj.showName == obj2.showName);
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

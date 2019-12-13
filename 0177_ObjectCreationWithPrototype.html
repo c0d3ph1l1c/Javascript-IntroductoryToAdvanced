@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Object Creation with Prototype</title>
+  <script>
+      function createPerson(name, qq) {     // Constructor
+        // Background work:
+        // var this = new Object();
+  
+        // Assign properties within function  
+        this.name = name;
+        this.qq = qq;
+  
+        // Background output:
+        // return this;
+      }
+
+      // Use prototypes to methods
+      createPerson.prototype.showName = function() {
+        alert('My name: ' + this.name);
+      };
+
+      createPerson.prototype.showQQ = function() {
+        alert('My qq: ' + this.qq);
+      };
+  
+      var obj =  new createPerson('blue', '258248832');
+      var obj2 = new createPerson('张三', '5468978546');
+  
+      obj.showName();
+      obj.showQQ();
+
+      obj2.showName();
+      obj2.showQQ();
+      alert(obj.showName == obj2.showName);
+    </script>
+</head>
+<body>
+  
+</body>
+</html>
