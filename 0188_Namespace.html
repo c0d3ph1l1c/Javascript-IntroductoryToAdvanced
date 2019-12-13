@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Namespace</title>
+  <script>
+    var zns = {};
+
+    zns.common = {};
+    zns.fx = {};
+    zns.site = {};
+
+    zns.common.getUser = function() {
+      alert('a');
+    };
+
+    zns.fx.getUser = function() {
+      alert('b');
+    };
+
+    zns.site.getUser = function() {
+      alert('c');
+    };
+
+    zns.common.getUser();
+    zns.fx.getUser();
+    zns.site.getUser();
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

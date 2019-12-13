@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Inheritance 2</title>
+  <script>
+    function A() {
+      this.abc = 12;
+    }
+
+    A.prototype.show = function() {
+      alert(this.abc);
+    }
+
+    // Inherits from A
+    function B() {
+      // this -> new B()
+      A.call(this);
+    }
+
+    // B.prototype = A.prototype;
+    for(var i in A.prototype) {
+      B.prototype[i] = A.prototype[i];
+    }
+
+    B.prototype.fn = function() {
+      alert('abc');
+    };
+
+    var objB = new B();
+    var objA = new A();
+
+    objA.fn();
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

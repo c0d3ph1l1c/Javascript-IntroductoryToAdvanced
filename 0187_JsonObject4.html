@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>JSON Object 4</title>
+  <script>
+    var json = { 
+      name: 'blue',
+      qq: '258248832',
+
+      showName: function() {
+        alert('My name: ' + this.name);
+      },
+      showQQ: function() {
+        alert('My QQ: ' + this.qq);
+      }
+    };
+
+    // It would be tedious to create multiple similar objects this way, only use it if there is only one of this in the program
+    var json2 = { 
+      name: '...',
+      qq: '258248832',
+
+      showName: function() {
+        alert('My name: ' + this.name);
+      },
+      showQQ: function() {
+        alert('My QQ: ' + this.qq);
+      }
+    };
+
+    json.showName();
+    json.showQQ();
+  </script>
+</head>
+<body>
+  
+</body>
+</html>
