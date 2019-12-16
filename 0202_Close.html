@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Close</title>
+</head>
+<body>
+  <!-- 
+    On IE:
+    - if window is opened manually by user, window.close() will pop up a confirmation dialog box before closing the window.
+    - If window is opened by window.open(), window.close() will not pop up a confimation dialog box and will close immediately.
+
+    On Older Chrome: 
+    - window.close() will close immediately regardless of whether the window is opened by window.open().
+
+    On New Chrome & FF:
+    - window.close() will only close the window immediately if the window is opened by window.open().
+  --> 
+  <input type="button" value="Close" onclick="window.close();">
+</body>
+</html>

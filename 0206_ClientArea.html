@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Client Area</title>
+  <script>
+    window.onload = function() {
+      var oBtn = document.getElementById('btn1');
+
+      oBtn.onclick = function() {
+        alert('Width: ' + document.documentElement.clientWidth + ' Height: ' + document.documentElement.clientHeight);
+      };
+    };
+  </script>
+</head>
+<body>
+  <input id="btn1" type="button" value="Client Area Size">
+</body>
+</html>

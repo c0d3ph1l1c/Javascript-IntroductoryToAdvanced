@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Scroll Top</title>
+  <script>
+    
+    document.onclick = function() {
+      // Used to support on IE & FF only, now is supported on all browsers
+      // alert(document.documentElement.scrollTop);
+
+      // Only supported on older Chrome
+      // alert(document.body.scrollTop);
+
+      var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+      
+      alert(scrollTop);
+    };
+
+    
+  </script>
+</head>
+<body style="height: 2000px;">
+</body>
+</html>
