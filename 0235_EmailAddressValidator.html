@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Email Address Validator</title>
+  <script>
+    window.onload = function() {
+      var oTxt = document.getElementById('txt1');
+      var oBtn = document.getElementById('btn1');
+
+      oBtn.onclick = function() {
+        // ^ - line begin
+        // $ - line end
+        var re = /^\w+@[a-z0-9]+\.[a-z]+$/i;
+
+        if(re.test(oTxt.value)) {
+          alert('Valid Email Address!');
+        } else {
+          alert('Wrong Email Address Format!');
+        }
+      };
+    };
+  </script>
+</head>
+<body>
+  <input id="txt1" type="text">
+  <input id="btn1" type="button" value="Validate">
+</body>
+</html>
