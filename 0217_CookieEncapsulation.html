@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Cookie Encapsulation</title>
+  <script>
+    function setCookie(name, value, iDay) {
+      var oDate = new Date();
+
+      oDate.setDate(oDate.getDate() + iDay);
+
+      document.cookie = name + '=' + value + ';expires=' + oDate;
+    }
+
+    function getCookie(name) {
+      var arr = document.cookie.split('; ');
+
+      for(var i = 0; i < arr.length; i++) {
+        var arr2 = arr[i].split('=');
+
+        if(arr2[0] == name) {
+          return arr2[1];
+        }
+      }
+
+      return '';
+    }
+
+    function removeCookie(name) {
+      // Set expiry date to be yesterday
+      setCookie(name, 1, -1);
+    }
+
+    // setCookie('userName', 'dancingblue', 365);
+    // setCookie('password', '123456', 14);
+
+    // alert(document.cookie);
+    // alert(getCookie('userName'));
+    // alert(getCookie('password'));
+    // alert(getCookie('sex'));
+
+    // removeCookie('userName');
+    removeCookie('password');
+    alert(document.cookie);
+  </script>
+</head>
+<body>
+  
+</body>
+</html>
